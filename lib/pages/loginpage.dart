@@ -47,7 +47,7 @@ class _LoginPageState extends State<LoginPage> with TickerProviderStateMixin {
         children: [
           Container(
             width: double.infinity,
-            height: 400,
+            height: 300,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.only(
                 bottomLeft: Radius.circular(400),
@@ -92,7 +92,7 @@ class _LoginPageState extends State<LoginPage> with TickerProviderStateMixin {
 
   Widget buildLoginField(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.all(30),
+      padding: EdgeInsets.all(10),
       child: Column(
         children: [
           Expanded(
@@ -130,7 +130,7 @@ class _LoginPageState extends State<LoginPage> with TickerProviderStateMixin {
                       ),
                     ),
                   ),
-                  SizedBox(height: 40),
+                  // SizedBox(height: 40),
                 ],
               ),
             ),
@@ -152,7 +152,7 @@ class _LoginPageState extends State<LoginPage> with TickerProviderStateMixin {
 
   Widget buildSignUpField(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.all(30),
+      padding: EdgeInsets.all(10),
       child: Column(
         children: [
           Expanded(
@@ -210,7 +210,7 @@ class _LoginPageState extends State<LoginPage> with TickerProviderStateMixin {
                       ),
                     ),
                   ),
-                  SizedBox(height: 40),
+                  // SizedBox(height: 40),
                 ],
               ),
             ),
