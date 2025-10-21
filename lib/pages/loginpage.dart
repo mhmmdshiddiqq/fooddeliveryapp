@@ -102,7 +102,7 @@ class _LoginPageState extends State<LoginPage> with TickerProviderStateMixin {
               child: Column(
                 children: [
                   SharedTextfield(
-                    title: 'Email',
+                    title: Text('Email'),
                     hintText: 'Enter your email',
                     hintStyle: TextStyle(color: Colors.grey),
                     controller: _loginEmailController,
@@ -110,7 +110,7 @@ class _LoginPageState extends State<LoginPage> with TickerProviderStateMixin {
                   ),
                   SizedBox(height: 20),
                   SharedTextfield(
-                    title: 'Password',
+                    title: Text('Password'),
                     hintText: 'Enter your password',
                     obscureText: _isObsecure,
                     hintStyle: TextStyle(color: Colors.grey),
@@ -162,7 +162,7 @@ class _LoginPageState extends State<LoginPage> with TickerProviderStateMixin {
               child: Column(
                 children: [
                   SharedTextfield(
-                    title: 'Email',
+                    title: Text('Email'),
                     hintText: 'Enter your email',
                     hintStyle: TextStyle(color: Colors.grey),
                     controller: _signupEmailController,
@@ -170,7 +170,7 @@ class _LoginPageState extends State<LoginPage> with TickerProviderStateMixin {
                   ),
                   const SizedBox(height: 20),
                   SharedTextfield(
-                    title: 'Phone Number',
+                    title: Text('Phone Number'),
                     hintText: 'Enter your phone number',
                     hintStyle: TextStyle(color: Colors.grey),
                     controller: _signupPhoneController,
@@ -179,7 +179,7 @@ class _LoginPageState extends State<LoginPage> with TickerProviderStateMixin {
                   ),
                   const SizedBox(height: 20),
                   SharedTextfield(
-                    title: 'Password',
+                    title: Text('Password'),
                     hintText: 'Enter your password',
                     hintStyle: TextStyle(color: Colors.grey),
                     controller: _signupPasswordController,
@@ -188,7 +188,7 @@ class _LoginPageState extends State<LoginPage> with TickerProviderStateMixin {
                   ),
                   SizedBox(height: 20),
                   SharedTextfield(
-                    title: 'Confirm Password',
+                    title: Text('Confirm Password'),
                     hintText: 'Confirm your password',
                     hintStyle: TextStyle(color: Colors.grey),
                     controller: _confirmPasswordController,

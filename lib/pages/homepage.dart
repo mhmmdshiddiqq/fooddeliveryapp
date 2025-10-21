@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:food_deliver/pages/detailmenu.dart';
+import 'package:food_deliver/pages/loginpage.dart';
+import 'package:food_deliver/pages/orderpage.dart';
+import 'package:food_deliver/pages/profilepage.dart';
 import 'package:food_deliver/widgets/shared_text_field.dart';
 import 'package:heroicons/heroicons.dart';
 
@@ -30,10 +34,15 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        actions: const [
-          Padding(
-            padding: EdgeInsets.all(20),
-            child: Icon(Icons.shopping_cart_outlined),
+        actions: [
+          IconButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => OrderPage()),
+              );
+            },
+            icon: Icon(Icons.shopping_cart_outlined),
           ),
         ],
       ),
@@ -46,11 +55,11 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
               alignment: Alignment.centerLeft,
               child: Text(
                 "Delicious \nfood for You",
-                style: TextStyle(fontSize: 60, fontWeight: FontWeight.w900),
+                style: TextStyle(fontSize: 40, fontWeight: FontWeight.w900),
               ),
             ),
             SharedTextfield(
-              title: "Search",
+              hintText: "Search",
               controller: _searchController,
               prefixIcon: const Icon(Icons.search),
             ),
@@ -91,7 +100,14 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                     _buildDrawerItem(
                       icon: HeroIcons.userCircle,
                       title: "Profile",
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => ProfilePage(),
+                          ),
+                        );
+                      },
                     ),
                     _buildDivider(),
                     _buildDrawerItem(
@@ -136,7 +152,12 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                 Icons.arrow_forward_rounded,
                 color: Colors.white,
               ),
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => LoginPage()),
+                );
+              },
             ),
           ),
         ],
@@ -218,7 +239,19 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
         Expanded(
           child: ListView(
             scrollDirection: Axis.horizontal,
-            children: List.generate(3, (index) => _buildFoodCard()),
+            children: List.generate(3, (index) {
+              return GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const DetailsMenu(),
+                    ),
+                  );
+                },
+                child: _buildFoodCard(),
+              );
+            }),
           ),
         ),
       ],

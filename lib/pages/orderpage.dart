@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:food_deliver/pages/homepage.dart';
 import 'package:food_deliver/widgets/shared_button.dart';
+import 'package:heroicons/heroicons.dart';
 
-class HistoryPage extends StatelessWidget {
-  const HistoryPage({super.key});
+class OrderPage extends StatelessWidget {
+  const OrderPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: const Text("History"),
+        title: const Text("Orders"),
         leading: IconButton(
           icon: const Icon(Icons.arrow_back),
           onPressed: () => Navigator.pop(context),
@@ -21,10 +22,15 @@ class HistoryPage extends StatelessWidget {
         child: Column(
           children: [
             const Spacer(),
-            Icon(Icons.history_rounded, size: 120, color: Colors.grey[300]),
+            HeroIcon(
+              HeroIcons.shoppingCart,
+              style: HeroIconStyle.outline,
+              size: 120,
+              color: Colors.grey[300],
+            ),
             const SizedBox(height: 30),
             const Text(
-              "No history yet",
+              "No orders yet",
               style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 12),

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class SharedTextfield extends StatelessWidget {
-  final String title;
+  final Widget? title;
   final String? hintText;
   final TextEditingController controller;
   final TextInputType? keyboardType;
@@ -13,7 +13,7 @@ class SharedTextfield extends StatelessWidget {
 
   const SharedTextfield({
     super.key,
-    required this.title,
+    this.title,
     this.hintText,
     required this.controller,
     this.readOnly = false,
@@ -29,7 +29,7 @@ class SharedTextfield extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Padding(padding: EdgeInsets.all(10), child: Text(title)),
+        Padding(padding: EdgeInsets.all(10), child: title),
         TextFormField(
           keyboardType: keyboardType,
           controller: controller,
@@ -39,7 +39,7 @@ class SharedTextfield extends StatelessWidget {
             hintText: hintText,
             hintStyle: hintStyle,
             prefixIcon: prefixIcon,
-            border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
+            border: OutlineInputBorder(borderRadius: BorderRadius.circular(40)),
           ),
           validator: validator,
         ),
